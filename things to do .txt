@@ -1,0 +1,11 @@
+things to do to get the confidence
+
+1.solve 50 question of array and string 
+2.get comfortable with stream api 
+3.master collection
+4.master the theory of sql springboot, mvc, core, hibernate and data jpa.
+5.master multithreading concept 
+6.master serialization
+
+
+and all set!!!!!!!!!!!!!!!!!! 
