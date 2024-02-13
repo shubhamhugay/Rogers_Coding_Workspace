@@ -9,11 +9,11 @@ import java.util.Map;
 
 //map (interface) -> AbstractMap(abstractClass)    ->   HashMap<class> 
 
-//1.HashMap is class impplenting the map interface 
+//1.HashMap is class implementing the map interface 
 
 //2.it stores in key value pair
 
-//3.keys must be unquie value can be duplicated  and  it can store one null key and multiple null values
+//3.keys must be unique value can be duplicated  and  it can store one null key and multiple null values
 
 //4.it is non-synchronized mean not thread safe 
 
@@ -21,7 +21,7 @@ import java.util.Map;
 
 //6.it is subclass of AbstractMap abstract class  
 
-//7.order of the element is not guarented as it depends on the hashcode 
+//7.order of the element is not guaranteed as it depends on the hashcode 
 
 //and in order which it is inserted
 
@@ -83,9 +83,7 @@ public class HashMap_java101 {
 			Map.Entry<String , Integer>  entry= a1.next();
 			System.out.println("key :- " + entry.getKey()  +   " values :- " + entry.getValue());
 		}
-		
-		
+
 	}
-	
 	
 }

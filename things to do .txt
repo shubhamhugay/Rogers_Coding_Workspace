@@ -8,4 +8,27 @@ things to do to get the confidence
 6.master serialization
 
 
+
+
+for backend 
+1.java core 
+2.java oops
+3.java 8
+4.multithreading
+5.stream api mainly
+
+framework
+1.spring core
+2.spring mvc
+3.spring data-jpa
+4.hibernate
+
+
+if time is there 
+1.JDBC
+2.junit
+3.React
+4.html and css HandOnPractise
+
+
 and all set!!!!!!!!!!!!!!!!!! 
