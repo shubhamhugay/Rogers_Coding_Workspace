@@ -99,8 +99,11 @@ Geospatial Index
 Hashed Index
 TTL (Time-To-Live) Index
 
+what is cursor? what are the important cursor method?
+
+
 ---------------------------------------------------------------------------------------------------------------------------
- howt to create index ?
+ how to create index ?
  how to drop index?
  how to get index?
  
@@ -115,16 +118,7 @@ TTL (Time-To-Live) Index
  clustered index
 
 
-
-
-
-
-
-
-
-
 code(Query):
-
 //how to create Index
 db.collectionName.createIndex("fieldName");
 
@@ -134,8 +128,6 @@ db.collectionName.dropIndex("fieldName");
 //how to see execution stats or backends operation description
 db.collectionName.find().explain("executionStats");
 
-
-
 stage-projection covered?
 executionStages-fetch?
 multikey Index?
@@ -143,4 +135,5 @@ text index?hpw to check score?
 when and how to create collection? background true?
 
  
+
 
