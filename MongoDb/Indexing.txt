@@ -1,0 +1,146 @@
+My notes:- 
+          we are learning - INDEXING
+       
+ *)what is collection scan - COLLSCAN?(like linear search)
+In MongoDB, a collection scan means going through every document in 
+a collection to find matches for a query. It's less efficient than 
+using indexes and can slow down performance, especially with large 
+collections or complex queries.
+
+*)what is Index scan  -IXSCAN?(like binary search)
+In MongoDB, an IXSCAN (Index Scan) means efficiently using an index to 
+find and retrieve matching documents for a query, making searches faster 
+and more efficient compared to scanning through all documents in a 
+ collection.
+
+*)what was the need of indexing?why we prefer IXSCAN over COLLSCAN?
+  When a query is executed and there's an appropriate index available to
+  cover the query conditions, MongoDB can perform an index scan to 
+  quickly identify and fetch the relevant documents using the index
+  keys. This process is much faster and more efficient than scanning 
+  through every document in the collection.
+  An IXSCAN indicates that MongoDB is utilizing an index to satisfy the
+  query conditions, which generally results in improved query performance
+  and reduced resource consumption compared to a collection scan. By 
+  leveraging indexes effectively, MongoDB can quickly locate and return
+  the requested data, enhancing overall database performance. 
+
+
+*)what is exactly indexing? what it does ? is it sorted?
+Indexing in MongoDB is a way to speed up queries by organizing 
+data in a structured format. When you create an index on a field,
+ MongoDB builds a separate data structure that sorts the values of 
+ that field. When you query using that field, MongoDB can quickly 
+ locate the relevant documents by performing a binary search on
+  this sorted data structure. This helps improve query performance
+   because MongoDB doesn't need to scan through all documents; 
+   it can efficiently find the ones that match the query criteria.
+
+*)are indexes stored in b tree datastructure?
+Yes, in MongoDB, indexes are typically stored in a B-tree (Balanced Tree) 
+data structure. B-trees are well-suited for indexing because they provide 
+efficient search, insertion, and deletion operations, and they keep the data sorted.
+
+B-trees are balanced, meaning that the height of the tree is kept relatively
+ small compared to the number of keys it stores, which ensures that operations 
+ like searching and inserting remain efficient even as the size of the index 
+ grows. This makes B-trees a popular choice for indexing in database systems 
+ like MongoDB.
+
+
+7.what the index collection stores?
+In MongoDB, an index stores references to documents within a collection sorted
+ by the indexed field(s). Each entry in the index typically consists of the 
+ indexed field value(s) and a reference to the corresponding document or documents
+  in the collection.
+
+Additionally, some index types may store additional metadata or pointers to 
+facilitate efficient search operations. Overall, the primary purpose of an 
+index in MongoDB is to provide a quick lookup mechanism for finding documents 
+that match specific query criteria, thereby improving query performance.
+
+
+When a query is executed in MongoDB and an appropriate index exists for the
+ fields being queried, MongoDB can use the B-tree index to efficiently locate 
+ the documents that match the query criteria. By searching through the B-tree 
+ index, MongoDB can quickly narrow down the search space and retrieve the relevant 
+ documents without needing to scan through all the documents in the collection. 
+ This process significantly improves query performance, especially for large 
+ collections, by minimizing the amount of data that needs to be examined.
+
+*)what are the trade off??? disadvantage?
+Certainly! Here are the trade-offs of indexing in MongoDB presented as bullet points:
+
+Increased Storage: Indexes require additional storage space.
+Write Overhead: Index maintenance during data updates can increase write overhead.
+Memory Usage: Indexes consume memory resources for caching frequently accessed indexes.
+Index Maintenance: Continuous updates to indexes are needed to keep them consistent with the data.
+Query Performance: While indexes improve performance for some queries, they may not benefit all 
+queries equally.
+Index Selection: Designing and managing indexes require careful consideration to avoid
+ unnecessary overhead.
+
+*)when to use indexing?
+Frequent Queries: Use indexing for fields involved in queries executed frequently.
+Large Collections: Index fields in collections with a large number of documents to speed up search operations.
+Sorting: Index fields used for sorting query results to accelerate sorting operations.
+Unique Constraints: Index fields where uniqueness constraints need to be enforced efficiently.
+Join Operations: Optimize join operations by indexing fields used for joining documents.
+Text Search: Utilize text indexes for efficient text search functionality in MongoDB.
+
+*)types of index?
+the types of indexes presented as bullet points:
+
+Single Field Index
+Compound Index
+Multikey Index
+Text Index
+Geospatial Index
+Hashed Index
+TTL (Time-To-Live) Index
+
+---------------------------------------------------------------------------------------------------------------------------
+ howt to create index ?
+ how to drop index?
+ how to get index?
+ 
+ 
+ 
+ 
+ single key index
+ multikey index
+ compound index
+ text key index
+ hashed index
+ clustered index
+
+
+
+
+
+
+
+
+
+
+code(Query):
+
+//how to create Index
+db.collectionName.createIndex("fieldName");
+
+//how to drop index
+db.collectionName.dropIndex("fieldName");
+
+//how to see execution stats or backends operation description
+db.collectionName.find().explain("executionStats");
+
+
+
+stage-projection covered?
+executionStages-fetch?
+multikey Index?
+text index?hpw to check score?
+when and how to create collection? background true?
+
+ 
+
